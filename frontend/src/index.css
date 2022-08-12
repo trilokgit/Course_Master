@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+}
+
+.div404{
+    
+    background-color: red;
+    width: 100vw;
+    height: 64.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+}
+
+.div404 h1{
+    font-weight: bold;
+    color:white;
+    font-size: 85px;
+    margin-bottom: 50px;
+}
+
+.div404 a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.div404 i{
+    color: white;
+
+}
+
+i{
+    cursor: pointer;
+}
+
+.scr{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

@@ -1,0 +1,45 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('teacher/',views.TeacherList.as_view()),
+    path('teacher/dashboard/<int:pk>',views.TeacherDashboard.as_view()),
+    path('student/dashboard/<int:pk>',views.StudentDashboard.as_view()),
+    path('student/',views.StudentList.as_view()),
+    path('teacher/<int:pk>/',views.TeacherDetail.as_view()),
+    path('data-load/<int:pk>/',views.DataDetail.as_view()),
+    path('data-modify/<int:myid>/',views.DataModify),
+    path('teacher-login',views.teacher_login),
+    path('user-login',views.user_login),
+    path('rating-count/<int:pk>',views.RatingCountList.as_view()),
+    
+    path('category/',views.CategoryList.as_view()),
+    path('course/',views.CourseList.as_view()),
+    path('course/<int:pk>',views.CourseDetailList.as_view()),
+    path('chapter/',views.ChapterList.as_view()),
+    path('chapter/<int:pk>',views.ChapterDetailView.as_view()),
+    path('course-chapters/<int:course_id>',views.CourseChapterList.as_view()),
+    path('teacher-courses/<int:teacher_id>', views.TeacherCourseList.as_view()),
+    path('teacher-course-detail/<int:pk>', views.TeacherCourseDetail.as_view()),
+    path('student-enroll-course/',views.StudentCourseEnrollmentList.as_view()),
+    path('fetch-enroll-status/<int:student_id>/<int:course_id>',views.fetch_enroll_status),
+    path('fetch-enroll-students/<int:course_id>',views.EnrolledStudensList.as_view()),
+    path('fetch-enroll-courses/<int:student_id>',views.EnrolledStudensList.as_view()),
+    path('fetch-recommended-courses/<int:studentId>',views.CourseList.as_view()),
+    path('fetch-all-enroll-students/<int:teacher_id>',views.EnrolledStudensList.as_view()),
+    path('course-rating/<int:course_id>',views.CourseRatingReviewList.as_view()),
+    path('fetch-rating-status/<int:student_id>/<int:course_id>',views.fetch_rating_status),
+    path('student-add-favorite-course/',views.StudentFavoriteCourseList.as_view()),
+    path('student-remove-favorite-course/<int:course_id>/<int:student_id>',views.remove_favorite_course),
+    path('fetch-favorite-status/<int:student_id>/<int:course_id>',views.fetch_favorite_status),
+    path('fetch-favorite-courses/<int:student_id>',views.StudentFavoriteCourseList.as_view()),
+    path('add-assignment/<int:teacher_id>/<int:student_id>',views.StudentAssignmentList.as_view()),
+    path('fetch-all-student-assignments/<int:teacher_id>/<int:student_id>/<int:course_id>',views.StudentAssignmentList.as_view()),
+    path('fetch-all-student-classwork/<int:studentId>',views.StudentAssignmentList.as_view()),
+    path('my-comment',views.MyCommentList.as_view()),
+    path('my-comment/<int:course_id>',views.MyCommentList.as_view()),
+    path('delete-comment/<int:myid>',views.DeleteCommentList),
+    path('forget-password',views.forgetPassword),
+    
+    
+]
